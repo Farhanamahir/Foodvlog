@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<html lang="">
+<head>
+<style>
+
+</style>
+</head>
+<body id="top">
+
+<div class="wrapper row3">
+  <main class="hoc container clear">
+    <section id="introblocks">
+      <ul class="nospace group btmspace-80">
+        {% for i in pro %}
+        <li class="one_third">
+          <figure><a class="imgover" href="{{i.get_url}}"><img src="{{i.img.url}}" style="height:200px;width:500px" alt=""></a>
+            <figcaption>
+              <h6 class="heading">{{i.name}}</h6>
+              <p>{{i.desc|truncatewords:17}}</p><br>
+              <p> Price:{{i.price}}</p><br>
+              <p>Stock left:{{i.stock}}</p>
+            </figcaption>
+          </figure>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    <hr class="btmspace-80">
+    <div class="clear"></div>
+  </main>
+</div>
+</div>
+<script src="{% static 'hm/layout/scripts/jquery.min.js' %}"></script>
+<script src="{% static 'hm/layout/scripts/jquery.backtotop.js' %}"></script>
+<script src="{% static 'hm/layout/scripts/jquery.mobilemenu.js' %}"></script>
+</body>
+</html>
+{% endblock %}
